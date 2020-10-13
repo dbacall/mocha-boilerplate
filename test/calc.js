@@ -1,5 +1,6 @@
 let chai = require('chai');
 let should = chai.should();
+const { expect } = require('chai');
 let calc = require('../calculator');
 
 describe('Calculator Functions', () => {
@@ -24,6 +25,17 @@ describe('Calculator Functions', () => {
     it('should work when the argument is a decimal', () => {
       let res = calc.celsiusToFahrenheit(1.5);
       res.should.be.equal(34.7);
+    });
+
+    it('should work when the argument is negative', () => {
+      let res = calc.celsiusToFahrenheit(-10);
+      res.should.be.equal(14);
+    });
+
+    it('should throw an error if the argument is a string', () => {
+      expect(function () {
+        calc.celsiusToFahrenheit('fasa');
+      }).to.throw(TypeError, 'Argument must be a number!');
     });
   });
 });
