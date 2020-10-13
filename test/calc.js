@@ -43,5 +43,14 @@ describe('Calculator Functions', () => {
         calc.celsiusToFahrenheit();
       }).to.throw(Error, 'You must enter a number!');
     });
+
+    it('should throw an error if the argument is less than -273.15', () => {
+      expect(function () {
+        calc.celsiusToFahrenheit(-280);
+      }).to.throw(
+        Error,
+        'Absolute zero is 273.15 Celsius, input something the same or higher.'
+      );
+    });
   });
 });

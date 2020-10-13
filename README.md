@@ -32,3 +32,4 @@ npm run test-dev
 - It should handle negative numbers
 - It should only accept numbers
 - It should throw an error if no argument
+- It should not work for temperatures below -273.15

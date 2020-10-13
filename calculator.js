@@ -9,6 +9,11 @@ function celsiusToFahrenheit(temp) {
   if (isNaN(temp)) {
     throw new TypeError('Argument must be a number!');
   }
+  if (temp < -273.15) {
+    throw new Error(
+      'Absolute zero is 273.15 Celsius, input something the same or higher.'
+    );
+  }
   return (temp / 5) * 9 + 32;
 }
 
