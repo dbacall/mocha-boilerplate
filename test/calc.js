@@ -15,5 +15,10 @@ describe('Calculator Functions', () => {
       let res = calc.celsiusToFahrenheit(20);
       res.should.be.equal(68);
     });
+
+    it('should work when the returned value is a decimal', () => {
+      let res = calc.celsiusToFahrenheit(1);
+      res.should.be.equal(33.8);
+    });
   });
 });
