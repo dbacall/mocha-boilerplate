@@ -31,3 +31,4 @@ npm run test-dev
 - It should work when both values are decimals
 - It should handle negative numbers
 - It should only accept numbers
+- It should throw an error if no argument

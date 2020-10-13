@@ -32,10 +32,16 @@ describe('Calculator Functions', () => {
       res.should.be.equal(14);
     });
 
-    it('should throw an error if the argument is a string', () => {
+    it('should throw an error if the argument is not a number', () => {
       expect(function () {
         calc.celsiusToFahrenheit('fasa');
       }).to.throw(TypeError, 'Argument must be a number!');
+    });
+
+    it('should throw an error if the argument is nothing', () => {
+      expect(function () {
+        calc.celsiusToFahrenheit();
+      }).to.throw(Error, 'You must enter a number!');
     });
   });
 });
